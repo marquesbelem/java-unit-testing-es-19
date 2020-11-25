@@ -19,6 +19,8 @@ public class JogadorMock {
                 } else if (valor == 20) {
                     setVida(100);
                     saldo = saldo - 20;
+                } else {
+                    System.out.println("Escolha R$10,00 ou R$20,00 para comprar Cura.");
                 }
             } else {
                 System.out.println("O valor deve ser igual a R$10,00 ou R$20,00 para comprar Cura.");
