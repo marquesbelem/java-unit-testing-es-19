@@ -15,7 +15,7 @@ public class JogadorTest {
         int esperado = 80;
 
         //act - ação
-        atual = jogador.dano(100,20);
+        atual = jogador.Dano(20);
 
         //assert - verficação
         Assert.assertEquals(esperado, atual);
@@ -28,7 +28,7 @@ public class JogadorTest {
         int atual = 100;
         int esperado = 50;
 
-        atual = jogador.dano(100,-50);
+        atual = jogador.Dano(-50);
 
         Assert.assertEquals(esperado, atual);
     }
@@ -40,7 +40,7 @@ public class JogadorTest {
         int atual = 100;
         int esperado = 100;
 
-        atual = jogador.dano(100,0);
+        atual = jogador.Dano(0);
 
         Assert.assertEquals(esperado, atual);
     }
@@ -51,12 +51,38 @@ public class JogadorTest {
     public  void CuraIgualZero() {
 
         Jogador jogador = new Jogador();
-        int atual = 80;
+
+        //Fazer o mock setando a vida para 80 e mudar o valor atual para 80
+
+        int atual = 100;
         int esperado = 100;
 
-        atual = jogador.cura(100,80,30);
+        atual = jogador.Cura(0);
 
         Assert.assertEquals(esperado, atual);
     }
 
+    @Test
+    public  void CuraMaiorQueVidaMaxima() {
+
+        Jogador jogador = new Jogador();
+        int atual = 100;
+        int esperado = 100;
+
+        atual = jogador.Cura(30);
+
+        Assert.assertEquals(esperado, atual);
+    }
+
+    @Test
+    public  void CuraMenorQueZero() {
+
+        Jogador jogador = new Jogador();
+        int atual = 100;
+        int esperado = 100;
+
+        atual = jogador.Cura(-5);
+
+        Assert.assertEquals(esperado, atual);
+    }
 }
