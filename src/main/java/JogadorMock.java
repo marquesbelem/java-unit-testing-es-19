@@ -1,5 +1,5 @@
 public class JogadorMock {
-    private double saldo, vidaAtual;
+    private double saldo, coleteAtual;
 
     public JogadorMock(){
         carregarSaldo();
@@ -9,7 +9,7 @@ public class JogadorMock {
         saldo = 20;
     }
 
-    public double comprarCura(double valor){
+    public double comprarColete(double valor){
         if(saldo > 10) {
             if (valor > 0) {
                 if (valor == 10) {
@@ -20,27 +20,27 @@ public class JogadorMock {
                     setVida(100);
                     saldo = saldo - 20;
                 } else {
-                    System.out.println("Escolha R$10,00 ou R$20,00 para comprar Cura.");
+                    System.out.println("Escolha R$10,00 ou R$20,00 para comprar Colete.");
                 }
             } else {
-                System.out.println("O valor deve ser igual a R$10,00 ou R$20,00 para comprar Cura.");
+                System.out.println("O valor deve ser igual a R$10,00 ou R$20,00 para comprar Colete ou o SuperColete.");
             }
         } else {
-            System.out.println("O saldo deve ser igual ou superior a R$10,00 para comprar Cura.");
+            System.out.println("O saldo deve ser igual ou superior a R$10,00 para comprar Colete ou SuperColete.");
         }
         return getTotal();
     }
 
-    private void setVida(double vidaAtual) {
-        this.vidaAtual = vidaAtual;
+    private void setVida(double coleteAtual) {
+        this.coleteAtual = coleteAtual;
     }
 
     public double getVida(){
-        return vidaAtual;
+        return coleteAtual;
     }
 
     public double getTotal(){
-        return vidaAtual;
+        return coleteAtual;
     }
 
 }
